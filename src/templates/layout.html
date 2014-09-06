@@ -3,7 +3,7 @@ $def with (content)
 <html lang="zh-cn">
     <head>
         <meta charset="utf-8">
-        <title>$content.get('title', 'My site')</title>
+        <title>$content.get('title', '爱虎号')</title>
         <meta property="qc:admins" content="451435444061050176375" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="http://libs.baidu.com/bootstrap/3.2.0/css/bootstrap.css" rel="stylesheet">
@@ -20,7 +20,7 @@ $def with (content)
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/">我的网站</a>
+                    <a class="navbar-brand" href="/">爱虎号应用中心</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -30,9 +30,11 @@ $def with (content)
                         $if not session.logined:
                             <li><a href="/qq_login">用QQ登录</a></li>
                         $else:
-                            <li><a href="#">$session.nickname</a></li>
+                            <li><a title="" href="/logout">退出登录</a></li>
                         <li><a href="/about">关于</a></li>
                     </ul>
+                    $if session.logined:
+                        <p class="navbar-text pull-right">$session.nickname</p>
                 </div>
             </div>
         </div>
