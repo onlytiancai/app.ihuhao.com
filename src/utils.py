@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
+import web
 
 def init_logger(log_filename, level='info', console=False):
     import logging.handlers
@@ -15,3 +16,15 @@ def init_logger(log_filename, level='info', console=False):
         consoleHandler.setFormatter(formatter)
         logger.addHandler(consoleHandler)
     logger.addHandler(handler)
+
+
+def filter_input_loadhook():
+    i = web.input()
+    # 请求太大，直接返回http 400
+    for k in i:
+        if len(i[k]) > 102400:
+            raise web.badrequest('request to large.')
+
+
+def get_clientip():
+    return web.ctx.env.get('HTTP_X_REAL_IP', web.ctx.ip)

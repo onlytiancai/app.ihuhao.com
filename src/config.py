@@ -7,6 +7,10 @@ qq_callback = 'http://app.ihuhao.com/qq_callback'
 log_path = '/data/log/app-ihuhao.com.log'
 log_level = 'info'
 
+sqlite_db_path = '/data/app-ihuhao.com.db'
+
+session_file_path = '/data/app-ihuhao.com.session'
+
 def reload_config():
     '加载真实配置'
     try:
