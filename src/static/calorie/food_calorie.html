@@ -1,0 +1,875 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
+<meta name="keywords" content="物卡路里计算器,减肥计算器" />
+<meta name="description" content="物卡路里计算器" />
+<title>食物卡路里计算器 - 食物热量计算器 - 食物卡路里查 - 减肥计算器</title>
+<script>cache_sjs="14082604";sj_jie_mian="0";</script>
+<link href="http://f.51240.com/img/css/style.css?v=14082604" rel="stylesheet" type="text/css" />
+<script src="http://f.51240.com/img/js/js.js?v=14082604"></script>
+<script src="http://f.51240.com/g/data/data.js?v=14082604"></script>
+<script>all_zhi_xing_js_head();</script>
+</head>
+
+<body>
+
+<div id="pmk_sj_top" class="pmk_sj_show">
+<a href="http://www.51240.com/" id="pmk_sj_top_home">　</a>
+食物卡路里计算器</div>
+
+
+
+
+
+<div id="top" class="pmk_990_show pmk_1040_show">
+
+<div style="float:left;">
+<div id="fenxiang_div" style="float:left;">分享功能载入中..</div>
+</div>
+
+<div style="float:right;">
+<a href="#" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage(document.location.href);">设为首页</a>
+<a href="#" onclick="javascript:addfavorite();">加入收藏</a>
+<a style="color:#363;font-weight:bold;" href="http://www.51240.com/api/" target="_blank">接口调用</a>
+<a style="color:#F00;" href="http://about.7x24s.com/contact/" target="_blank" rel="nofollow">意见/报错</a>
+</div>
+
+</div>
+
+
+
+
+<div id="main">
+
+
+<div id="top_logo" class="pmk_990_show pmk_1040_show">
+<a href="http://www.51240.com/"><img id="top_logo_img" src="http://f.51240.com/img/logo.gif?v=14082604" alt="便民查询网 - 51240.com - 在线查询 - 实用工具" /></a>
+<div id="ggwz___1" class="pmk_990_show pmk_1040_show"><script>ggdm_duqu("ggwz___1", "468x60");</script></div>
+</div>
+
+<script>try{parent.dingbu_shezhi();}catch (e){}</script>
+
+
+
+<!-- 左侧开始 -->
+<div id="main_left">
+
+<div class="kuang" style="margin-bottom: 8px;">
+
+
+<div id="main_title" class="kuang_title" >
+<div id="main_shouye_anniu" style="float: left;"><a href="http://www.51240.com/">首页</a><span class="main_title_gt">&gt;</span></div>
+<div style="float:left;"><h1><a href="http://kaluli.51240.com/" id="main_anniu">食物卡路里计算器</a></h1></div>
+
+<div id="ggwz___2" class="pmk_990_show pmk_1040_show" style="width:468px;height:15px;float:right;margin-top:6px;"><script>ggdm_duqu("ggwz___2", "468x15");</script></div><div id="main_qian_jin_hou_tui" style="float:right;"></div>
+</div>
+
+
+<div id="main_content"><script type="text/javascript" src="http://f.51240.com/file/kaluli/js.js?v=14082604"></script>
+
+ 
+<br />
+<div align="center"><img src="http://f.51240.com/file/kaluli/pic.gif?v=14082604" title="卡路里计算器" /></div> 
+
+<div class="huisefengexian">推荐：<a href="http://kalulixiaohao.51240.com/">卡路里运动消耗计算器</a></div>
+
+<table width="720" align="center"> 
+<form id="this_form" name="this_form"> 
+<tr> 
+<td height="40" colspan="4" align="center">请输入你年龄: <input name="Input" id="age" onChange="calculateHeat()" size="3" /> 你的体重: <input name="Input2" id="weight" onChange="calculateHeat()" size="3" /> (公斤) <input onClick="calculateHeat()" type="button" value="计算热量" name="Submit" /></td> 
+</tr> 
+<tr> 
+<td height="40" colspan="4" align="center">你每天需要的热量应该是:<input name="Input2" id="heat" size="8" />卡路里</td> 
+</tr> 
+<tr> 
+<td height="30" colspan="4" align="center">如果要减肥的话：每日基本热量消耗-500（最多)就是每天的摄入热量</td> 
+</tr> 
+<tr> 
+<td height="30" colspan="4" align="center" id="advice" class="lanse"></td> 
+</tr> 
+<tr> 
+<td height="20" colspan="4" align="center"></td> 
+</tr> 
+<tr> 
+<td height="30">五谷类</td> 
+<td>肉类</td> 
+<td>酱油/调味料</td> 
+<td>饮品/酒类</td> 
+</tr> 
+<tr> 
+<td> 
+<select onChange="cal_volume1(this.form)" name="kcal_item1"> 
+<option value="0" selected>-- 请选择 --</option> 
+<option value="263">白饭1碗</option> 
+<option value="360">米粉(干)100g</option> 
+<option value="372">蛋面(干)100g</option> 
+<option value="203">河粉100g</option> 
+<option value="368">通心粉(干)100g</option> 
+<option value="363">意大利粉100g</option> 
+<option value="250">公仔面1个</option> 
+<option value="404">伊面1个</option> 
+<option value="100">乌冬100g</option> 
+<option value="356">上海面100g</option> 
+<option value="330">面线100g</option> 
+<option value="350">粉丝100g</option> 
+<option value="389">燕麦片100g</option> 
+</select> 
+</td> 
+<td> 
+<select onChange="cal_volume4(this.form)" name="kcal_item4"> 
+<option value="0" selected>-- 请选择 --</option> 
+<option value="114">牛肉100g</option> 
+<option value="450">牛肉(净瘦肉)100g</option> 
+<option value="260">牛肉(半肥瘦)100g</option> 
+<option value="300">汉堡牛扒100g</option> 
+<option value="240">咸牛肉100g</option> 
+<option value="100">鸡肉100g</option> 
+<option value="195">烧鸡100g</option> 
+<option value="198">白切鸡100g</option> 
+<option value="123">猪肉100g</option> 
+<option value="451">煎猪扒100g</option> 
+<option value="317">烧猪脾100g</option> 
+<option value="326">香肠100g</option> 
+<option value="674">煎烟肉100g</option> 
+<option value="389">火腿100g</option> 
+<option value="335">午餐肉100g</option> 
+<option value="355">烧羊脾100g</option> 
+</select> 
+</td> 
+<td> 
+<select onChange="cal_volume3(this.form)" name="kcal_item3"> 
+<option value="0" selected>-- 请选择 --</option> 
+<option value="24">花生酱1茶匙</option> 
+<option value="18">果酱1茶匙</option> 
+<option value="22">蜜糖1茶匙</option> 
+<option value="20">糖浆1茶匙</option> 
+<option value="14">白糖1茶匙</option> 
+<option value="14">方糖1粒</option> 
+<option value="25">蜜糖1茶匙</option> 
+<option value="34">沙律酱1茶匙</option> 
+<option value="29">叉烧酱1茶匙</option> 
+<option value="11">蚝油1茶匙</option> 
+<option value="19">辣椒油1茶匙</option> 
+<option value="5">老抽1茶匙</option> 
+<option value="7">生油1茶匙</option> 
+<option value="1.5">醋1茶匙</option> 
+<option value="5">蕃茄酱1茶匙</option> 
+</select> 
+</td> 
+<td> 
+<select onChange="cal_volume18(this.form)" name="kcal_item18"> 
+<option value="0" selected>-- 请选择 --</option> 
+<option value="0">清水</option> 
+<option value="1">茶1杯</option> 
+<option value="165">鲜橙汁1杯</option> 
+<option value="120">鲜苹果汁1杯</option> 
+<option value="140">鲜菠萝汁1杯</option> 
+<option value="60">鲜柠檬汁1杯</option> 
+<option value="140">鲜提子汁1杯</option> 
+<option value="100">鲜西柚汁1杯</option> 
+<option value="45">鲜西红柿汁1杯</option> 
+<option value="180">鲜西梅汁1杯</option> 
+<option value="100">鲜甘蔗汁1杯</option> 
+<option value="395">浓缩提子汁1杯</option> 
+<option value="500">浓缩菠萝汁1杯</option> 
+<option value="445">浓缩苹果汁1杯</option> 
+<option value="180">珍珠奶茶1杯</option> 
+<option value="5">黑咖啡1杯</option> 
+<option value="150">咖啡(加奶、糖)1杯</option> 
+<option value="1">红茶(无糖、奶)1杯</option> 
+<option value="150">红茶(加糖、奶)1杯</option> 
+<option value="190">酸梅汤1杯</option> 
+<option value="72">果菜汁1罐</option> 
+<option value="0">无糖乌龙茶1罐</option> 
+<option value="226">西班牙咖啡1杯</option> 
+<option value="350">红豆冰1杯</option> 
+<option value="120">甜豆浆1杯</option> 
+<option value="125">低脂奶1盒</option> 
+<option value="143">鲜奶1盒</option> 
+<option value="8">淡奶1茶匙</option> 
+<option value="23">炼奶1茶匙</option> 
+<option value="506">全脂速溶奶粉1杯</option> 
+<option value="397">低脂速溶奶粉1杯</option> 
+<option value="356">脱脂速溶奶粉1杯</option> 
+<option value="120">维他奶1盒</option> 
+<option value="100">益力多1支</option> 
+<option value="90">菊花茶1盒</option> 
+<option value="39">健怡可乐1罐</option> 
+<option value="178">可乐1罐</option> 
+<option value="190">芬达1罐</option> 
+<option value="147">雪碧1罐</option> 
+<option value="128">沙示1罐</option> 
+<option value="52">蜂蜜绿茶1罐</option> 
+<option value="88">宝矿力1罐</option> 
+<option value="198">葡萄适(小)1樽</option> 
+<option value="58">冻柠檬茶1杯</option> 
+<option value="90">蜜糖1杯</option> 
+<option value="45">阿华田1杯</option> 
+<option value="59">好立克1杯</option> 
+<option value="364">朱古力奶昔1杯</option> 
+<option value="323">云呢拿奶昔1杯</option> 
+<option value="147">苹果梳打1罐</option> 
+<option value="167">苹果梳打酒1罐</option> 
+<option value="165">有汽梅酒1罐</option> 
+<option value="95">啤酒1罐</option> 
+<option value="151">生啤1罐</option> 
+<option value="160">黑啤1罐</option> 
+<option value="140">餐后酒1杯</option> 
+<option value="83">红酒1杯</option> 
+<option value="83">白酒1杯</option> 
+<option value="95">烈酒(40%酒精含量)1杯</option> 
+<option value="106">清酒1杯</option> 
+<option value="190">香槟1杯</option> 
+</select> 
+</td> 
+</tr> 
+<tr> 
+<td height="30">脂肪类</td> 
+<td>海产类</td> 
+<td>西餐类</td> 
+<td>中西甜品类</td> 
+</tr> 
+<tr> 
+<td> 
+<select onChange="cal_volume2(this.form)" name="kcal_item2"> 
+<option value="0" selected>-- 请选择 --</option> 
+<option value="216">牛油1oz</option> 
+<option value="270">猪油1oz</option> 
+<option value="216">植物牛油1oz</option> 
+<option value="265">植物油1oz</option> 
+<option value="265">花生油1oz</option> 
+<option value="270">粟米油1oz</option> 
+<option value="240">葵花子油1oz</option> 
+<option value="96">芝士1oz</option> 
+<option value="11">脱脂芝士1oz</option> 
+<option value="85">鲜奶油1oz</option> 
+</select> 
+</td> 
+<td> 
+<select onChange="cal_volume5(this.form)" name="kcal_item5"> 
+<option value="0" selected>-- 请选择 --</option> 
+<option value="95">鱼柳100g</option> 
+<option value="130">三文鱼100g</option> 
+<option value="340">鳗鱼100g</option> 
+<option value="75">鳕鱼100g</option> 
+<option value="90">比目鱼100g</option> 
+<option value="240">秋刀鱼100g</option> 
+<option value="62">黄花鱼100g</option> 
+<option value="90">虾肉100g</option> 
+<option value="50">蚬肉100g</option> 
+<option value="100">龙虾100g</option> 
+<option value="100">带子100g</option> 
+<option value="50">墨鱼100g</option> 
+<option value="90">蟹肉100g</option> 
+<option value="195">虾米100g</option> 
+</select> 
+</td> 
+<td> 
+<select onChange="cal_volume10(this.form)" name="kcal_item10"> 
+<option value="0" selected>-- 请选择 --</option> 
+<option value="126">罗宋汤1碗</option> 
+<option value="157">粟米忌廉汤1碗</option> 
+<option value="450">酥皮汤1碗</option> 
+<option value="136">煎蛋1只</option> 
+<option value="220">吞拿鱼炒律1份</option> 
+<option value="70">豌豆虾沙律1份</option> 
+<option value="430">薯仔沙律1份</option> 
+<option value="896">鸡蛋饭1份</option> 
+<option value="383">粟米鸡粒饭1份</option> 
+<option value="764">咖喱鸡粉1份</option> 
+<option value="599">意式肉酱意粉1份</option> 
+<option value="363">焗猪扒意粉1份</option> 
+<option value="462">杂菌意粉1份</option> 
+<option value="400">烧牛肉三文治1份</option> 
+<option value="330">吞拿鱼三文治1份</option> 
+<option value="780">炸鸡蓝1份</option> 
+<option value="698">汉堡牛扒1份</option> 
+<option value="130">三文鱼100g</option> 
+<option value="14">生蚝100g</option> 
+<option value="18">烧牛肉100g</option> 
+</select> 
+</td> 
+<td> 
+<select onChange="cal_volume17(this.form)" name="kcal_item17"> 
+<option value="0" selected>-- 请选择 --</option> 
+<option value="148">红豆沙1碗</option> 
+<option value="148">绿豆沙1碗</option> 
+<option value="240">喳喳1碗</option> 
+<option value="180">椰汁西米露1碗</option> 
+<option value="220">黑糯米1碗</option> 
+<option value="305">芝麻糊1碗</option> 
+<option value="221">杏仁糊1碗</option> 
+<option value="211">核桃糊1碗</option> 
+<option value="220">芝麻汤丸1碗(4粒)</option> 
+<option value="137">糖不甩1碗(5粒)</option> 
+<option value="183">豆腐花1碗</option> 
+<option value="425">擂沙汤丸1碟(3粒)</option> 
+<option value="260">鲜奶炖蛋1碗</option> 
+<option value="124">豆腐花1碗</option> 
+<option value="158">雪糕梳打1杯</option> 
+<option value="70">牛油曲奇1块</option> 
+<option value="75">朱古力曲奇1块</option> 
+<option value="648">朱古力芭菲1杯</option> 
+<option value="260">朱古力布甸1杯</option> 
+<option value="280">芒果布甸1杯</option> 
+<option value="200">杏仁豆腐1碗</option> 
+<option value="300">什果西米捞1碗</option> 
+<option value="435">雪莓娘1件</option> 
+<option value="100">果汁雪条1枝</option> 
+<option value="160">脆皮雪条1枝</option> 
+<option value="200">芝麻雪糕批1枝</option> 
+<option value="110">日式草饼1个</option> 
+<option value="256">豆沙烧饼1件</option> 
+<option value="70">低脂奶酪1杯</option> 
+</select> 
+</td> 
+</tr> 
+<tr> 
+<td height="30">蔬菜/蛋类</td> 
+<td>快餐店类</td> 
+<td>日本料理类</td> 
+<td>即食食品/零食类</td> 
+</tr> 
+<tr> 
+<td> 
+<select onChange="cal_volume7(this.form)" name="kcal_item7"> 
+<option value="0" selected>-- 请选择 --</option> 
+<option value="47">葱100g</option> 
+<option value="35">洋葱100g</option> 
+<option value="40">大蒜100g</option> 
+<option value="68">马蹄100g</option> 
+<option value="20">菜心100g</option> 
+<option value="17">白菜100g</option> 
+<option value="20">通菜100g</option> 
+<option value="20">大芥菜100g</option> 
+<option value="15">椰菜(熟)100g</option> 
+<option value="18">西兰花(熟)100g</option> 
+<option value="29">椰菜花(熟)100g</option> 
+<option value="40">苋菜(熟)100g</option> 
+<option value="15">露笋(熟)100g</option> 
+<option value="20">西红柿(熟)100g</option> 
+<option value="12">苦瓜(熟)100g</option> 
+<option value="68">青豆(熟)100g</option> 
+<option value="32">荷兰豆(熟)100g</option> 
+<option value="14">青椒(熟)100g</option> 
+<option value="5">西芹(熟)100g</option> 
+<option value="37">红萝卜(熟)100g</option> 
+<option value="20">白萝卜(熟)100g</option> 
+<option value="23">青萝卜(熟)100g</option> 
+<option value="72">薯仔(熟)100g</option> 
+<option value="115">番薯(熟)100g</option> 
+<option value="73">美国南瓜100g</option> 
+<option value="35">日本南瓜100g</option> 
+<option value="14">生菜100g</option> 
+<option value="19">菠菜100g</option> 
+<option value="20">芽菜100g</option> 
+<option value="60">雪菜100g</option> 
+<option value="40">A菜100g</option> 
+<option value="40">豆苗100g</option> 
+<option value="14">西红柿100g</option> 
+<option value="12">青瓜100g</option> 
+<option value="26">茄瓜100g</option> 
+<option value="17">丝瓜100g</option> 
+<option value="40">冬瓜100g</option> 
+<option value="94">芋头100g</option> 
+<option value="52">莲藕100g</option> 
+<option value="36">海带100g</option> 
+<option value="30">草菇(罐头)100g</option> 
+<option value="76">粟米粒(罐头)100g</option> 
+<option value="171">栗子100g</option> 
+<option value="160">豆腐100g</option> 
+<option value="75">鸡蛋1只</option> 
+<option value="15">蛋白1只</option> 
+<option value="65">蛋黄1只</option> 
+<option value="16">鹌鹑蛋1只</option> 
+<option value="160">皮蛋1只</option> 
+</select> 
+</td> 
+<td> 
+<select onChange="cal_volume14(this.form)" name="kcal_item14"> 
+<option value="0" selected>-- 请选择 --</option> 
+<option value="130">脆薯饼1件</option> 
+<option value="269">松饼1件</option> 
+<option value="236">汉堡包1个</option> 
+<option value="320">芝士汉堡1个</option> 
+<option value="530">巨无霸1个</option> 
+<option value="430">猪柳蛋汉堡1个</option> 
+<option value="280">烟肉蛋汉堡1个</option> 
+<option value="460">照烧猪柳堡1个</option> 
+<option value="510">麦香鸡1个</option> 
+<option value="50">麦乐鸡1块</option> 
+<option value="220">薯条(小)1包</option> 
+<option value="470">薯条(中)1包</option> 
+<option value="400">薯条(大)1包</option> 
+<option value="355">炸洋葱圈1份</option> 
+<option value="170">Pizza薄批1件</option> 
+<option value="213">Pizza厚批1件</option> 
+<option value="350">炸鸡翼1只</option> 
+<option value="600">炸鸡脾1只</option> 
+<option value="225">煎猪扒1件</option> 
+<option value="220">煎香肠1条</option> 
+<option value="300">菜丝沙律(小)1杯</option> 
+<option value="460">牛油焗薯1个</option> 
+<option value="300">蛋沙律三文治1份</option> 
+<option value="190">吉士布甸1杯</option> 
+<option value="310">雪糕新地1杯</option> 
+<option value="60">麦乐鸡酱1盒</option> 
+</select> 
+</td> 
+<td> 
+<select onChange="cal_volume11(this.form)" name="kcal_item11"> 
+<option value="0 selected>-- 请选择 --</option> 
+<option value="80">面豉汤1碗</option> 
+<option value="106">蟹籽寿司2件</option> 
+<option value="104">明虾寿司2件</option> 
+<option value="102">带子寿司2件</option> 
+<option value="100">赤贝寿司2件</option> 
+<option value="175">三文鱼寿司2件</option> 
+<option value="100">八爪鱼寿司2件</option> 
+<option value="85">甜蛋寿司2件</option> 
+<option value="130">吞拿鱼寿司2件</option> 
+<option value="100">三文鱼子寿司2件</option> 
+<option value="126">海胆寿司2件</option> 
+<option value="160">三文鱼刺身100g</option> 
+<option value="94">八爪鱼刺身100g</option> 
+<option value="145">海胆刺身100g</option> 
+<option value="529">刺身定食1份</option> 
+<option value="818">炸猪扒定食1份</option> 
+<option value="707">姜汁猪肉定食1份</option> 
+<option value="425">盐烧鱼定食1份</option> 
+<option value="583">九州岛拉面1碗</option> 
+<option value="449">中华拉面1碗</option> 
+<option value="605">日式叉烧拉面1碗</option> 
+<option value="360">面豉汤面1碗</option> 
+<option value="595">炸虾汤面1碗</option> 
+<option value="260">日式冷面1碗</option> 
+<option value="602">鳗鱼饭1份</option> 
+<option value="764">咖喱猪扒饭1份</option> 
+<option value="540">日式海鲜炒饭1份</option> 
+<option value="622">铁板炒乌冬1份</option> 
+<option value="350">天妇罗1份</option> 
+<option value="88">枝豆1份</option> 
+<option value="128">炸豆腐1件</option> 
+<option value="166">京风炸豆腐1件</option> 
+<option value="48">煎饺子1件</option> 
+<option value="326">京烧银鳕鱼1份</option> 
+<option value="226">烧秋刀鱼1份</option> 
+<option value="767">天妇罗丼1份</option> 
+<option value="93">茶碗蒸1碗</option> 
+<option value="118">金菇牛肉卷1件</option> 
+<option value="180">酱汁鸡串烧1串</option> 
+<option value="220">酱汁猪肉串烧1串</option> 
+</select> 
+</td> 
+<td> 
+<select onChange="cal_volume15(this.form)" name="kcal_item15"> 
+<option value="0" selected>-- 请选择 --</option> 
+<option value="189">热狗肠1条</option> 
+<option value="73">茶叶蛋1只</option> 
+<option value="100">鱼蛋1串</option> 
+<option value="240">碗仔翅1碗</option> 
+<option value="240">鸡蛋仔1底</option> 
+<option value="260">罐头粟米汤1碗</option> 
+<option value="90">芝士饼1片</option> 
+<option value="70">消化饼1片</option> 
+<option value="31">加钙营养饼1片</option> 
+<option value="55">朱古力夹心饼1片</option> 
+<option value="32">克力架1片</option> 
+<option value="27">甜饼1片</option> 
+<option value="41">甜全麦饼1片</option> 
+<option value="1108">朱古力条1条</option> 
+<option value="250">纯味百力滋1盒</option> 
+<option value="575">士多啤梨百力滋1盒</option> 
+<option value="350">乐天熊仔饼1盒</option> 
+<option value="45">牛奶朱古力1粒</option> 
+<option value="52">甘脆朱古力1粒</option> 
+<option value="42">三角朱古力1粒</option> 
+<option value="31">薄荷朱古力1粒</option> 
+<option value="9">牛奶朱古力1粒</option> 
+<option value="12">花生朱古力1粒</option> 
+<option value="9">万乐珠1粒</option> 
+<option value="13">瑞士糖1粒</option> 
+<option value="160">凤梨酥1个</option> 
+<option value="555">薯片100g</option> 
+<option value="459">爆谷100g</option> 
+<option value="370">花生100g</option> 
+<option value="554">腰果100g</option> 
+<option value="600">开心果100g</option> 
+<option value="667">夏威夷果仁100g</option> 
+<option value="667">合桃100g</option> 
+<option value="572">杏仁100g</option> 
+<option value="572">白瓜子100g</option> 
+<option value="534">黑瓜子100g</option> 
+<option value="320">提子干100g</option> 
+<option value="15">话梅1粒</option> 
+<option value="100">咖啡冻1粒</option> 
+<option value="97">茉莉茶冻1粒</option> 
+<option value="330">鱿鱼丝100g</option> 
+<option value="475">牛肉干100g</option> 
+<option value="467">肉松100g</option> 
+</select> 
+</td> 
+</tr> 
+<tr> 
+<td height="30">生果类</td> 
+<td>茶餐厅类</td> 
+<td>面饱/蛋糕类</td> 
+<td>中式食肆类</td> 
+</tr> 
+<tr> 
+<td> 
+<select onChange="cal_volume6(this.form)" name="kcal_item6"> 
+<option value="0" selected>-- 请选择 --</option> 
+<option value="10">西梅1粒</option> 
+<option value="6">蓝梅1粒</option> 
+<option value="4">葡萄1粒</option> 
+<option value="7">荔枝1粒</option> 
+<option value="3">龙眼1粒</option> 
+<option value="55">苹果(小)1个</option> 
+<option value="58">雪梨(中)1个</option> 
+<option value="50">橙(小)1个</option> 
+<option value="30">柑(小)1个</option> 
+<option value="0.3">金桔1粒</option> 
+<option value="80">甜柿1个</option> 
+<option value="75">布尔(大)1个</option> 
+<option value="40">奇异果(中)1个</option> 
+<option value="55">杨桃1个</option> 
+<option value="70">水蜜桃1个</option> 
+<option value="128">芒果(中)1个</option> 
+<option value="380">牛油果(小)1个</option> 
+<option value="40">西柚1个</option> 
+<option value="20">沙田柚1片</option> 
+<option value="140">石榴1个</option> 
+<option value="17">枇杷1个</option> 
+<option value="20">柠檬1个</option> 
+<option value="90">香蕉1只</option> 
+<option value="85">皇帝蕉1只</option> 
+<option value="40">菠萝(去皮)1片</option> 
+<option value="40">西瓜1片</option> 
+<option value="50">木瓜1片</option> 
+<option value="60">蜜瓜1片</option> 
+<option value="60">哈蜜瓜1片</option> 
+</select> 
+</td> 
+<td> 
+<select onChange="cal_volume12(this.form)" name="kcal_item12"> 
+<option value="0" selected>-- 请选择 --</option> 
+<option value="1175">西多士1份</option> 
+<option value="255">热狗1只</option> 
+<option value="218">奶油多士1片</option> 
+<option value="194">奶酱多士1片</option> 
+<option value="420">火腿蛋三文治1份</option> 
+<option value="343">鸡蛋三文治1份</option> 
+<option value="95">炒蛋1只</option> 
+<option value="105">煎蛋1只</option> 
+<option value="80">荷包蛋1只</option> 
+<option value="300">火腿煎双蛋1份</option> 
+<option value="605">沙爹牛肉面1碗</option> 
+<option value="270">火腿通粉1碗</option> 
+<option value="800">炸鸡脾饭1碟</option> 
+<option value="548">猪扒饭1碟</option> 
+<option value="710">炒饭1碟</option> 
+<option value="524">菜远排骨饭1碟</option> 
+<option value="560">粟米肉粒饭1碟</option> 
+<option value="580">海鲜炒乌冬1碟</option> 
+</select> 
+</td> 
+<td> 
+<select onChange="cal_volume16(this.form)" name="kcal_item16"> 
+<option value="0" selected>-- 请选择 --</option> 
+<option value="75">白面饱1片</option> 
+<option value="65">全麦面饱1片</option> 
+<option value="44">法国面饱1片</option> 
+<option value="83">意大利面饱1片</option> 
+<option value="130">合桃方包1片</option> 
+<option value="94">芝麻麦包1个</option> 
+<option value="169">芝麻包1个</option> 
+<option value="94">麦包1个</option> 
+<option value="150">餐包1个</option> 
+<option value="151">朱古力榛子包1个</option> 
+<option value="213">午餐肉包1个</option> 
+<option value="134">吞拿鱼包1个</option> 
+<option value="194">叉烧包1个</option> 
+<option value="295">芝士火腿粟米包1个</option> 
+<option value="300">Pizza面包1个</option> 
+<option value="235">菠萝包1个</option> 
+<option value="221">鸡尾包1个</option> 
+<option value="169">提子包1个</option> 
+<option value="335">红豆包1个</option> 
+<option value="300">花生包1个</option> 
+<option value="186">蜜糖冬甩1件</option> 
+<option value="268">朱古力冬甩1件</option> 
+<option value="160">丹麦酥1个</option> 
+<option value="385">咖喱酥角1个</option> 
+<option value="300">鸡批1件</option> 
+<option value="269">苹果批1件</option> 
+<option value="160">牛角包1个</option> 
+<option value="150">大理石包1个</option> 
+<option value="220">蛋挞1件</option> 
+<option value="240">葡挞1件</option> 
+<option value="280">椰挞1件</option> 
+<option value="350">鲜果挞1件</option> 
+<option value="120">纸包蛋糕1件</option> 
+<option value="320">合桃蛋糕1片</option> 
+<option value="320">提子蛋糕1片</option> 
+<option value="240">水果忌廉蛋糕1件</option> 
+<option value="240">栗子忌廉蛋糕1件</option> 
+<option value="275">黑森林蛋糕1件</option> 
+<option value="267">芝士蛋糕1件</option> 
+</select> 
+</td> 
+<td> 
+<select onChange="cal_volume8(this.form)" name="kcal_item8"> 
+<option value="0" selected>-- 请选择 --</option> 
+<option value="159">炒鲜鱿1份</option> 
+<option value="427">炒三鲜1份</option> 
+<option value="20">清炒芥兰6棵</option> 
+<option value="137">青椒鸡肉1份</option> 
+<option value="232">煮牛肉1份</option> 
+<option value="130">蚝油金菇1份</option> 
+<option value="65">蒸酿豆腐1件</option> 
+<option value="600">甜酸排骨1份</option> 
+<option value="349">麻婆豆腐1份</option> 
+<option value="536">葱爆猪肉1份</option> 
+<option value="113">豉汁蒸鱼仓鱼1份</option> 
+<option value="228">青椒炒牛肉1份</option> 
+<option value="76">梅菜蒸大鱼腩1份</option> 
+<option value="133">青豆虾仁1份</option> 
+<option value="11">白灼中虾1只</option> 
+<option value="300">瘦叉烧100g</option> 
+<option value="400">半肥瘦叉烧100g</option> 
+<option value="420">烧肉100g</option> 
+<option value="331">半肥瘦烧肉100g</option> 
+<option value="198">白切鸡100g</option> 
+<option value="148">去皮白切鸡100g</option> 
+<option value="297">烧鸭100g</option> 
+<option value="195">烧鸡100g</option> 
+</select> 
+</td> 
+</tr> 
+<tr> 
+<td height="30">酒楼点心/炒粉面类</td> 
+<td>粥面类</td> 
+<td></td> 
+<td></td> 
+</tr> 
+<tr> 
+<td> 
+<select onChange="cal_volume9(this.form)" name="kcal_item9"> 
+<option value="0" selected>-- 请选择 --</option> 
+<option value="37">虾饺1件</option> 
+<option value="42">烧麦1件</option> 
+<option value="96">山竹牛肉1件</option> 
+<option value="45">鸡扎1件</option> 
+<option value="37">排骨1件</option> 
+<option value="25">凤爪1件</option> 
+<option value="39">鱼翅饺1件</option> 
+<option value="60">鲜竹卷1件</option> 
+<option value="44">鲜虾粉果1件</option> 
+<option value="113">潮州粉果1件</option> 
+<option value="120">小笼包1件</option> 
+<option value="80">煎萝卜糕1件</option> 
+<option value="400">糯米鸡1只</option> 
+<option value="140">珍珠鸡1只</option> 
+<option value="79">牛肉肠粉1条</option> 
+<option value="120">鲜虾肠粉1条</option> 
+<option value="573">咸肉粽1只</option> 
+<option value="94">叉烧包1件</option> 
+<option value="90">莲蓉包1件</option> 
+<option value="100">马拉糕1件</option> 
+<option value="60">蒸馒头1件</option> 
+<option value="100">炸馒头1件</option> 
+<option value="136">春卷1件</option> 
+<option value="113">芋角1件</option> 
+<option value="260">皮蛋瘦肉粥1碗</option> 
+<option value="1272">干烧伊面1碟</option> 
+<option value="696">干炒牛河1碟</option> 
+<option value="911">炒米粉1碟</option> 
+<option value="645">福建炒饭1碟</option> 
+<option value="620">扬州炒饭1碟</option> 
+<option value="740">鸳鸯炒饭1碟</option> 
+<option value="518">瘦叉烧饭1碗</option> 
+<option value="140">白灼油菜1碟</option> 
+<option value="148">红/绿豆沙1碗</option> 
+<option value="305">芝麻糊1碗</option> 
+<option value="280">焗西米布甸1杯</option> 
+</select> 
+</td> 
+<td> 
+<select onChange="cal_volume13(this.form)" name="kcal_item13"> 
+<option value="0" selected>-- 请选择 --</option> 
+<option value="88">白粥1碗</option> 
+<option value="132">潮州粥1碗</option> 
+<option value="165">碎肉粥1碗</option> 
+<option value="234">鱼片粥1碗</option> 
+<option value="270">及第粥1碗</option> 
+<option value="260">皮蛋瘦肉粥1碗</option> 
+<option value="247">鲜牛肉粥1碗</option> 
+<option value="260">艇仔粥1碗</option> 
+<option value="300">柴鱼花生猪肉粥1碗</option> 
+<option value="911">炒面1碟</option> 
+<option value="173">净米粉1碗</option> 
+<option value="470">牛肉面1碗</option> 
+<option value="480">排骨面1碗</option> 
+<option value="400">肉丝面1碗</option> 
+<option value="360">水饺面1碗</option> 
+<option value="316">墨丸面1碗</option> 
+<option value="480">牛腩面1碗</option> 
+<option value="320">鱼蛋粉1碗</option> 
+<option value="426">牛丸面1碗</option> 
+<option value="400">云吞面1碗</option> 
+<option value="670">牛腩捞面1碗</option> 
+<option value="310">粢饭1条</option> 
+<option value="535">净水饺1碗</option> 
+<option value="70">油条1条</option> 
+<option value="140">灼油菜1碟</option> 
+</select> 
+</td> 
+<td> 
+</td> 
+<td> 
+</td> 
+</tr> 
+<tr> 
+<td height="20" colspan="4" align="center"></td> 
+</tr> 
+<tr> 
+<td colspan="4" align="center"><select style="width: 500px;" size="5" name="selected_display"><option value="selected">你选择的食物列表:</option></select></td> 
+</tr> 
+<tr> 
+<td colspan="4" align="center" height="30">由以上食物您将摄取的总热量为：<input id="cal_volume" readonly size="10" value="0" name="cal_volume" />卡路里<input name="button" type="button" id="reset" onClick="resetall();" value="重新计算" /></td> 
+</tr> 
+<tr> 
+<td colspan="4" align="center" id="jixufenxi"></td> 
+</tr> 
+<tr> 
+<td colspan="4" align="center"><img src="http://f.51240.com/file/kaluli/1.gif?v=14082604" width="170" height="170" /><img src="http://f.51240.com/file/kaluli/2.gif?v=14082604" width="170" height="170" /><img src="http://f.51240.com/file/kaluli/3.gif?v=14082604" width="170" height="170" /><img src="http://f.51240.com/file/kaluli/4.gif?v=14082604" width="170" height="170" /></td>
+</tr> 
+</form>
+</table>
+
+<div id="ggwz___3" class="pmk_990_show pmk_1040_show" style="height:90px;margin-top:8px;margin-bottom:8px"><script>ggdm_duqu("ggwz___3", "728x90");</script></div>
+
+<h2 class="xiaoshuomingkuang_biaoti">关于卡路里</h2>
+<div class="xiaoshuomingkuang_neirong">　　一般来说，成人每天至少需要1500大卡的能量来维持身体机能，这是因为即使你躺着不动，你的身体仍需能来保持体温，心肺功能和大脑运作。基础代谢消耗会因个体间身高、体重、年龄、性别的差异而有所不同。</div></div>
+</div>
+
+<div id="ggwz___4" class="kuang pmk_990_show pmk_1040_show" style="height:90px;margin-bottom:8px;"><script>ggdm_duqu("ggwz___4", "728x90");</script></div>
+
+</div>
+<!-- 左侧结束 -->
+
+
+
+
+
+<!-- 右侧开始 -->
+<div id="main_right" class="pmk_990_show pmk_1040_show">
+<div id="main_right_zi">
+
+<div id="ggwz___5" class="pmk_990_show" style="background-color:#DDF4FE;height:250px;margin-bottom:8px;"><script>ggdm_duqu("ggwz___5", "250x250");</script></div>
+<div id="ggwz___6" class="pmk_1040_show" style="background-color:#DDF4FE;height:250px;margin-bottom:8px;"><script>ggdm_duqu("ggwz___6", "300x250");</script></div>
+
+
+<div class="kuang" style="margin-bottom:8px;">
+<div class="kuang_title">推荐工具</div>
+<ul class="tl">
+<li><a href="http://shouji.51240.com/" target="_blank">手机号码查询</a></li><li><a href="http://tel.51240.com/" target="_blank">固定电话查询</a></li><li><a href="http://shenfenzheng.51240.com/" target="_blank">身份证查询</a></li><li><a href="http://weixingditu.51240.com/" target="_blank">卫星地图</a></li><li><a href="http://fanyi.51240.com/" target="_blank">在线翻译</a></li><li><a href="http://qqjiazhi.51240.com/" target="_blank">QQ价值评估</a></li><li><a href="http://ip.51240.com/" target="_blank">IP地址查询</a></li><li><a href="http://laohuangli.51240.com/" target="_blank">老黄历</a></li><li><a href="http://naozhong.51240.com/" target="_blank">在线闹钟</a></li><li><a href="http://huobiduihuan.51240.com/" target="_blank">货币汇率兑换</a></li></ul>
+<div></div>
+</div>
+
+<div></div>
+<div id="ggwz___7" class="pmk_990_show" style="background-color:#DDF4FE;height:250px;margin-bottom:8px;"><script>ggdm_duqu("ggwz___7", "250x250");</script></div>
+<div id="ggwz___8" class="pmk_1040_show" style="background-color:#DDF4FE;height:250px;margin-bottom:8px;"><script>ggdm_duqu("ggwz___8", "300x250");</script></div>
+<div></div>
+
+</div>
+</div>
+<!-- 右侧结束 -->
+
+
+
+
+
+
+<div class="pmk_990_show pmk_1040_show">
+<div id="ggwz___9" class="pmk_990_show" style="height:52px;clear:both;"><script>ggdm_duqu("ggwz___9", "990x52");</script></div>
+<div id="ggwz___10" class="pmk_1040_show" style="height:52px;clear:both;"><script>ggdm_duqu("ggwz___10", "1040x52");</script></div>
+</div>
+
+
+
+
+
+<script type="text/javascript">try{parent.zhongbu_shezhi();}catch (e){}</script>
+<script type="text/javascript">lazyLoad.init();</script>
+
+<script>all_zhi_xing_js();</script>
+
+
+<div id="bottom_fjxx">
+<div class="kuang pmk_990_show pmk_1040_show" style="margin-top:8px;"><div class="kuang_title">随机推荐查询工具</div><div style="padding: 5px;line-height: 18px;"><a href="http://tianqiyubao.51240.com/" target="_blank">天气预报</a> <a href="http://biaozhunshijian.51240.com/" target="_blank">标准时间</a> <a href="http://gupiao.51240.com/" target="_blank">股票行情</a> <a href="http://liecheshike.51240.com/" target="_blank">列车时刻</a> <a href="http://tv.51240.com/" target="_blank">电视节目表</a> <a href="http://riqicha.51240.com/" target="_blank">日期差计算</a> <a href="http://miaobiao.51240.com/" target="_blank">在线秒表</a> <a href="http://wannianrili.51240.com/" target="_blank">万年日历查询</a> <a href="http://xunleikuaiche.51240.com/" target="_blank">迅雷,快车,旋风链接加密解密</a> <a href="http://feiji.51240.com/" target="_blank">飞机航班班次</a> <a href="http://zaixiangouwu.51240.com/" target="_blank">在线购物</a> <a href="http://shipu.51240.com/" target="_blank">食谱大全</a> <a href="http://saomiao.51240.com/" target="_blank">在线端口扫描</a> <a href="http://zhongcaoyao.51240.com/" target="_blank">中草药</a> <a href="http://lianjiejiancha.51240.com/" target="_blank">友情链接检查</a> <a href="http://anquanqi.51240.com/" target="_blank">女性安全期测试</a> <a href="http://huaiyunjisuanqi.51240.com/" target="_blank">怀孕计算器</a> <a href="http://richurimo.51240.com/" target="_blank">日出日没时刻</a> <a href="http://shengnanshengnv.51240.com/" target="_blank">生男生女</a> <a href="http://tizhongceshi.51240.com/" target="_blank">体重测试</a> <a href="http://jisuanqi.51240.com/" target="_blank">公式计算器</a> <a href="http://kuaidichaxun.51240.com/" target="_blank">快递查询</a> <a href="http://yinghancidian.51240.com/" target="_blank">英汉词典</a> <a href="http://peisegongju.51240.com/" target="_blank">配色工具</a> <a href="http://changyongdianhuahaoma.51240.com/" target="_blank">常用电话号码</a> <a href="http://huobiduihuan.51240.com/" target="_blank">货币汇率兑换</a> <a href="http://weilaishijian.51240.com/" target="_blank">未来时间查询</a> <a href="http://suijimimashengcheng.51240.com/" target="_blank">生成随机密码</a> <a href="http://bbs.51240.com/" target="_blank">论坛转贴工具</a> <a href="http://qqlt.51240.com/" target="_blank">QQ强制聊天</a> <a href="http://jinzhi.51240.com/" target="_blank">进制转换</a> <a href="http://fanjianhuzhuan.51240.com/" target="_blank">简繁互转</a> <a href="http://zhongwenzhuanpinyin.51240.com/" target="_blank">中文转拼音</a> <a href="http://zaixianpinyinshuru.51240.com/" target="_blank">在线拼音输入法</a> <a href="http://zaixianwubishuru.51240.com/" target="_blank">在线五笔输入法 86版</a> <a href="http://chuantongzhongwenpaiban.51240.com/" target="_blank">传统中文排版工具</a> <a href="http://zaixianjisuanqi.51240.com/" target="_blank">在线计算器</a> <a href="http://gerensuodeshui.51240.com/" target="_blank">个人所得税计算器</a> （<a href="http://www.51240.com/" target="_blank">查看全部</a>）</div></div></div>
+
+
+
+<div class="kuang pmk_sj_show" id="pmk_sj_hddb"><a onclick="window.scrollTo(0,0);return false;" href="#top">回到顶部</a></div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<div id="bottom_top" class="pmk_990_show pmk_1040_show">
+<a href="http://www.51240.com/api/" target="_blank">接口调用</a>
+|
+<a href="http://about.7x24s.com/contact/" target="_blank" rel="nofollow">意见建议</a>
+</div>
+
+
+
+
+
+
+
+
+
+<div id="bottom" class="pmk_990_show pmk_1040_show">CopyRight &copy; 2004-2014 <a href="http://www.51240.com/">便民查询网</a> All Rights Reserved<br /><a href="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow">闽ICP备05000099号</a></div>
+
+
+
+<script>try{parent.dibu_shezhi();}catch (e){}</script>
+
+
+
+
+<script>jie_mian_qie_huan();</script>
+
+
+
+
+
+
+
+
+
+
+
+<script>xuan_ting("main_left", "main_right_zi");dui_lian_guang_gao();</script>
+
+<div style="display:none"><script src="http://f.51240.com/tongji/51240.com.js?v=14082604"></script></div>
+
+
+</body>
+</html>
+<!-- 42.121.121.79 |-ok-| -->

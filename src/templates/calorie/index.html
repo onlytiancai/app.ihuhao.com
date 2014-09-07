@@ -24,39 +24,9 @@
         </ul>
         <div class="tab-content">
             <div class="tab-pane active" id="tab-food">
-                <div class="panel panel-default" style="margin-top:10px;">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">选择食物</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="input-group">
-                            <input type="text" class="form-control">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">搜索食物</button>
-                            </span>
-                        </div><!-- /input-group -->
-                        <ul class="list-inline" style="margin-top:10px;">
-                            <li><a href="#">米饭</a></li>
-                            <li><a href="#">米饭</a></li>
-                            <li><a href="#">米饭</a></li>
-                            <li><a href="#">米饭</a></li>
-                            <li><a href="#">米饭</a></li>
-                        </ul>
-                    </div>
+                <div id="placeholder-food-select">
                 </div>
-                <div class="panel panel-default" style="margin-top:10px;">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">计算结果: <span style="color:blue; font-weight:bold;">200</span> 卡路里</h3>
-                    </div>
-                    <div class="panel-body">
-                        <ul class="list-inline">
-                            <li><a href="#">米饭</a></li>
-                            <li><a href="#">米饭</a></li>
-                            <li><a href="#">米饭</a></li>
-                            <li><a href="#">米饭</a></li>
-                            <li><a href="#">米饭</a></li>
-                        </ul>
-                    </div>
+                <div id="placeholder-food-select-result">
                 </div>
                 <button type="submit" class="btn btn-primary">添加饮食记录</button>
             </div>
@@ -86,4 +56,43 @@
         </div>       
     </div>
 </div>
-
+<script id="tpl-food-select" type="text/template" charset="utf-8">
+     <div class="panel panel-default" style="margin-top:10px;">
+        <div class="panel-heading">
+            <h3 class="panel-title">选择食物</h3>
+        </div>
+        <div class="panel-body">
+            <div class="input-group">
+                <input type="text" class="form-control txt-food-keyword">
+                <span class="input-group-btn">
+                    <button class="btn btn-default btn-search-food" type="button">搜索食物</button>
+                </span>
+            </div><!-- /input-group -->
+            <ul class="list-inline" style="margin-top:10px;">
+                <li class="clear-search"><a href="#">清空搜索</a></li>
+                {{#search_food_results}}
+                <li class="most-food-item"><a href="#" data-id="{{0}}">{{0}} ({{1}}卡)</a></li>
+                {{/search_food_results}}
+                {{#most_foods}}
+                <li class="most-food-item"><a href="#" data-id="{{0}}">{{0}} ({{1}}卡)</a></li>
+                {{/most_foods}}
+            </ul>
+        </div>
+    </div>
+</script>
+<script id="tpl-food-select-result" type="text/template" charset="utf-8">
+    <div class="panel panel-default" style="margin-top:10px;">
+        <div class="panel-heading">
+            <h3 class="panel-title">计算结果: <span style="color:blue; font-weight:bold;">{{total}}</span> 卡路里</h3>
+        </div>
+        <div class="panel-body">
+            <ul class="list-inline">
+                {{#foods}}
+                <li><a href="#">{{0}}</a></li>
+                {{/foods}}
+            </ul>
+        </div>
+    </div>
+</script>
+<script src="/static/calorie/food_calorie.js"></script>
+<script src="/static/calorie/main.js"></script>
