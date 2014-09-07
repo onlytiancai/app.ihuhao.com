@@ -1,7 +1,6 @@
 <style type="text/css" media="screen">
 .item {
     margin: 5px 0;
-    width:300px;
 }
 .item .header {
     background-color:#ddd;
@@ -15,36 +14,76 @@
 
 </style>
 <h3>我的卡路里</h3>
-<ul class="nav nav-tabs" role="tablist">
-    <li class="active"><a href="#tab-home" role="tab" data-toggle="tab">历史</a></li>
-    <li><a href="#tab-food" role="tab" data-toggle="tab">饮食</a></li>
-    <li><a href="#tab-sport" role="tab" data-toggle="tab">运动</a></li>
-    <li><a href="#tab-help" role="tab" data-toggle="tab">帮助</a></li>
-</ul>
-
-<div class="tab-content">
-    <div class="tab-pane active" id="tab-home">
-        <div class="item">
-            <div class="header">
-                <p class="pull-left">2014-10-10</p>
-                <p class="pull-right">550 大卡</p>
+<div class="row">
+    <div class="col-md-6">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#tab-food" role="tab" data-toggle="tab">饮食</a></li>
+            <li><a href="#tab-home" role="tab" data-toggle="tab">历史</a></li>
+            <li><a href="#tab-sport" role="tab" data-toggle="tab">运动</a></li>
+            <li><a href="#tab-help" role="tab" data-toggle="tab">帮助</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab-food">
+                <div class="panel panel-default" style="margin-top:10px;">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">选择食物</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="input-group">
+                            <input type="text" class="form-control">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">搜索食物</button>
+                            </span>
+                        </div><!-- /input-group -->
+                        <ul class="list-inline" style="margin-top:10px;">
+                            <li><a href="#">米饭</a></li>
+                            <li><a href="#">米饭</a></li>
+                            <li><a href="#">米饭</a></li>
+                            <li><a href="#">米饭</a></li>
+                            <li><a href="#">米饭</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel panel-default" style="margin-top:10px;">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">计算结果: <span style="color:blue; font-weight:bold;">200</span> 卡路里</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="list-inline">
+                            <li><a href="#">米饭</a></li>
+                            <li><a href="#">米饭</a></li>
+                            <li><a href="#">米饭</a></li>
+                            <li><a href="#">米饭</a></li>
+                            <li><a href="#">米饭</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">添加饮食记录</button>
             </div>
-            <div style="clear:both"></div>
-            <p>鸡蛋1个</p>
-            <p>米饭500克</p>
-        </div>
-        <div class="item">
-            <div class="header">
-                <p class="pull-left">2014-10-09</p>
-                <p class="pull-right">1024 大卡</p>
+            <div class="tab-pane" id="tab-home">
+                <div class="item">
+                    <div class="header">
+                        <p class="pull-left">2014-10-10</p>
+                        <p class="pull-right">550 大卡</p>
+                    </div>
+                    <div style="clear:both"></div>
+                    <p>鸡蛋1个</p>
+                    <p>米饭500克</p>
+                </div>
+                <div class="item">
+                    <div class="header">
+                        <p class="pull-left">2014-10-09</p>
+                        <p class="pull-right">1024 大卡</p>
+                    </div>
+                    <div style="clear:both"></div>
+                    <p>猪肉半斤</p>
+                    <p>馒头5个</p>
+                </div>
             </div>
-            <div style="clear:both"></div>
-            <p>猪肉半斤</p>
-            <p>馒头5个</p>
-        </div>
 
+            <div class="tab-pane" id="tab-sport">sport</div>
+            <div class="tab-pane" id="tab-help">help</div>
+        </div>       
     </div>
-    <div class="tab-pane" id="tab-food">food</div>
-    <div class="tab-pane" id="tab-sport">sport</div>
-    <div class="tab-pane" id="tab-help">help</div>
 </div>
+
