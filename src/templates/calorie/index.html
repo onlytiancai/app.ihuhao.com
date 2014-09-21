@@ -62,21 +62,69 @@
             <h3 class="panel-title">选择食物</h3>
         </div>
         <div class="panel-body">
-            <div class="input-group">
-                <input type="text" class="form-control txt-food-keyword">
-                <span class="input-group-btn">
-                    <button class="btn btn-default btn-search-food" type="button">搜索食物</button>
-                </span>
-            </div><!-- /input-group -->
-            <ul class="list-inline" style="margin-top:10px;">
-                <li class="clear-search"><a href="#">清空搜索</a></li>
-                {{#search_food_results}}
-                <li class="most-food-item"><a href="#" data-id="{{0}}">{{0}} ({{1}}卡)</a></li>
-                {{/search_food_results}}
-                {{#most_foods}}
-                <li class="most-food-item"><a href="#" data-id="{{0}}">{{0}} ({{1}}卡)</a></li>
-                {{/most_foods}}
+            <ul class="nav nav-pills" role="tablist" style="margin-bottom:10px;">
+                <li {{#tab-lastest-food-active}}class="active"{{/tab-lastest-food-active}}>
+                    <a href="#tab-lastest-food" role="tab" data-toggle="pill">最近饮食</a></li>
+                <li {{#tab-search-food-active}}class="active"{{/tab-search-food-active}}>
+                    <a href="#tab-search-food" role="tab" data-toggle="pill">搜索饮食</a></li>
+                <li {{#tab-input-food-active}}class="active"{{/tab-input-food-active}}>
+                    <a href="#tab-input-food" role="tab" data-toggle="pill">手工添加</a></li>
             </ul>
+            <div class="tab-content">
+                <div class="tab-pane {{#tab-lastest-food-active}}active{{/tab-lastest-food-active}}" id="tab-lastest-food">
+                    <table class="table">
+                        {{#most_foods}}
+                        <tr>
+                            <td>
+                                {{0}}
+                            </td>
+                            <td>
+                                {{1}} 卡
+                            </td>
+                            <td>
+                                <a href="javascript:;" class="add-food-item" data-id="{{0}}">添加</a>
+                            </td>
+                        </tr> 
+                        {{/most_foods}}
+                    </table>
+                </div>
+                <div class="tab-pane {{#tab-search-food-active}}active{{/tab-search-food-active}}" id="tab-search-food">
+                    <div class="input-group">
+                        <input type="text" class="form-control txt-food-keyword">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-search-food" type="button">搜索食物</button>
+                        </span>
+                    </div>
+                    <table class="table">
+                        {{#search_food_results}}
+                        <tr>
+                            <td>
+                                {{0}}
+                            </td>
+                            <td>
+                                {{1}} 卡
+                            </td>
+                            <td>
+                                <a href="javascript:;" class="add-food-item" data-id="{{0}}">添加</a>
+                            </td>
+                        </tr> 
+                        {{/search_food_results}}
+                    </table>
+                </div>
+                <div class="tab-pane  {{#tab-input-food-active}}active{{/tab-input-food-active}}" id="tab-input-food">
+                    <form role="form">
+                          <div class="form-group">
+                              <label for="txt_food_name">饮食名称及单位</label>
+                              <input type="input" class="form-control" id="txt_food_name">
+                          </div>
+                          <div class="form-group">
+                              <label for="txt_food_calorie">热量（卡）</label>
+                              <input type="input" class="form-control" id="txt_food_calorie">
+                          </div>
+                          <button type="submit" class="btn btn-default btn-add-input-food">添加</button>
+                    </form>  
+                </div>
+            </div>
         </div>
     </div>
 </script>
@@ -86,11 +134,21 @@
             <h3 class="panel-title">计算结果: <span style="color:blue; font-weight:bold;">{{total}}</span> 卡路里</h3>
         </div>
         <div class="panel-body">
-            <ul class="list-inline">
+            <table class="table">
                 {{#foods}}
-                <li><a href="#">{{0}}</a></li>
+                <tr>
+                    <td>
+                        <a href="#">{{0}}</a>
+                    </td>
+                    <td>
+                        {{1}} 卡
+                    </td>
+                    <td>
+                        <a href="javascript:;" class="delete-food-item">删除</a>
+                    </td>
+                </tr> 
                 {{/foods}}
-            </ul>
+            </table>
         </div>
     </div>
 </script>

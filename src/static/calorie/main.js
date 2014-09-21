@@ -20,11 +20,11 @@ $(function(){
             this.all_foods = new Backbone.Collection(food_calories); //food_calories 是全局的
 
             _.bindAll(this, "render");
-            _.bindAll(this, "most_food_click");
+            _.bindAll(this, "add_food_click");
             _.bindAll(this, "search_food_click");
-            _.bindAll(this, "clear_search_click");
 
             this.search_food_results = [];
+            this.active_tab = 'tab-lastest-food-active';
 
             this.most_foods.bind("reset", this.render);
             this.most_foods.fetch();
@@ -34,17 +34,17 @@ $(function(){
         el: "#placeholder-food-select",
         template: $('#tpl-food-select').html(),
         events: {
-            "click .most-food-item": "most_food_click",
+            "click .add-food-item": "add_food_click",
             "click .btn-search-food": "search_food_click",
-            "click .clear-search": "clear_search_click"
         },
         render: function() {
             var data = {most_foods: this.most_foods.toJSON(),
                         search_food_results: this.search_food_results}; 
+            data[this.active_tab] = true;
             var html = Mustache.render(this.template, data);
             $(this.el).html(html);
         },
-        most_food_click: function(e) {
+        add_food_click: function(e) {
             var food = $(e.target).data('id');
             food = this.all_foods.find(function(x){return x.get(0) == food;});
             app.trigger("food-selected", food);
@@ -54,12 +54,9 @@ $(function(){
             if (keyword.length < 1) return;
             var foods = this.all_foods.filter(function(x){return x.get(0).indexOf(keyword) != -1;});
             this.search_food_results = _.map(foods, function(x){return x.toJSON()});
+            this.active_tab = 'tab-search-food-active';
             this.render();
         },
-        clear_search_click: function(){
-            this.search_food_results = []; 
-            this.render();
-        }
     });
 
     var FoodResultView = Backbone.View.extend({
@@ -86,6 +83,12 @@ $(function(){
             this.foods.push(food.toJSON());
             this.total += food.get(1);
             this.render();
+        },
+        events: {
+            "click .delete-food-item": "delete_food_item"
+        },
+        delete_food_item: function(e){
+        
         }
     });
 
