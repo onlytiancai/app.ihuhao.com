@@ -28,7 +28,6 @@
                 </div>
                 <div id="placeholder-food-select-result">
                 </div>
-                <button type="submit" class="btn btn-primary">添加饮食记录</button>
             </div>
             <div class="tab-pane" id="tab-home">
                 <div class="item">
@@ -95,7 +94,7 @@
                             <button class="btn btn-default btn-search-food" type="button">搜索食物</button>
                         </span>
                     </div>
-                    <table class="table">
+                    <table class="table" style="margin-top:10px;">
                         {{#search_food_results}}
                         <tr>
                             <td>
@@ -121,7 +120,7 @@
                               <label for="txt_food_calorie">热量（卡）</label>
                               <input type="input" class="form-control" id="txt_food_calorie">
                           </div>
-                          <button type="submit" class="btn btn-default btn-add-input-food">添加</button>
+                          <button type="button" class="btn btn-default btn-add-input-food">添加</button>
                     </form>  
                 </div>
             </div>
@@ -138,17 +137,18 @@
                 {{#foods}}
                 <tr>
                     <td>
-                        <a href="#">{{0}}</a>
+                        <a href="#">{{name}}</a>
                     </td>
                     <td>
-                        {{1}} 卡
+                        {{calorie}} 卡
                     </td>
                     <td>
-                        <a href="javascript:;" class="delete-food-item">删除</a>
+                        <a href="javascript:;" class="delete-food-item" data-id="{{name}}">删除</a>
                     </td>
                 </tr> 
                 {{/foods}}
             </table>
+            <button type="button" class="btn btn-primary btn-submit-food-record">添加饮食记录</button>
         </div>
     </div>
 </script>

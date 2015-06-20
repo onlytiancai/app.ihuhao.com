@@ -6,6 +6,7 @@ import config
 import utils
 import oauth.qqlogin as qqlogin
 import calorie_app
+import csvchart_app
 
 
 urls = ["/", 'IndexHandler',
@@ -16,6 +17,7 @@ urls = ["/", 'IndexHandler',
         "/logout", 'LogoutHandler',
 
         "/calorie", calorie_app.app,
+        "/csvchart", csvchart_app.app,
         ]
 
 app = web.application(urls, globals())

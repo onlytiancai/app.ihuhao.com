@@ -1,0 +1,142 @@
+<h3>Csv Chart</h3>
+<div class="row">
+    <div class="col-md-12">
+        <form>
+            <div class="form-group">
+                <label>输入csv文本</label>
+                <textarea class="form-control" rows="10" id="txt_csv">|  25059 | 2013-11 |
+|  23226 | 2013-12 |
+|  19221 | 2014-01 |
+|  18839 | 2014-02 |
+|  31702 | 2014-03 |
+|  30170 | 2014-04 |
+|  35024 | 2014-05 |
+|  59348 | 2014-06 |
+| 125615 | 2014-07 |
+| 137118 | 2014-08 |
+| 150981 | 2014-09 |
+| 205293 | 2014-10 |
+| 216300 | 2014-11 |
+| 199050 | 2014-12 |
+| 151340 | 2015-01 |
+|  81395 | 2015-02 |
+| 246493 | 2015-03 |
+| 511904 | 2015-04 |
+| 457626 | 2015-05 |
+| 204239 | 2015-06 |
+</textarea>
+            </div>
+            <div class="form-group">
+                <label>分隔符</label>
+                <div>
+                    <label class="radio-inline">
+                        <input type="radio" name="delimiter" value="" checked> 自动探测 
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="delimiter" value=","> 逗号 
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="delimiter" value=";"> 分号 
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="delimiter" value=" "> 空格 
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="delimiter" value="\t"> 制表符 
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="delimiter" value="other"> 其它 
+                    </label>
+                    <label class="radio-inline" style="margin-left:0;padding-left:0">
+                        <input type="text" id="other_delimiter" value="" style="width:50px;display:none;" maxLength="1"> 
+                    </label>
+                </div>
+            </div>
+            <button id="btn_parse" type="button" class="btn btn-default">解析CSV</button>
+        </form>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12" id="container-table-result" style="padding:10px;">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12" id="container-chart-result" style="padding:10px;">
+    </div>
+</div>
+<script id="tpl-table-result" type="text/template" charset="utf-8">
+<p>结果表格</p>
+<div style="height:400px;overflow:scroll;">
+    <table class="table table-bordered" id="tbl_result" >
+        <tr>
+        {{#header}}
+        <td>{{.}}</td>
+        {{/header}}
+        </tr>
+
+        {{#data}}
+        <tr>
+        {{#.}}
+        <td>{{.}}</td>
+        {{/.}}
+        </tr>
+        {{/data}}
+    </table>
+</div>
+
+<form class="form-horizontal col-md-6" style="margin-top:20px">
+  <div class="form-group">
+    <label class="col-sm-3 control-label">图表标题</label>
+    <div class="col-sm-9">
+      <input type="input" class="form-control" id="txt-chart-title" value="测试图表">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">X轴数据</label>
+    <div class="col-sm-9">
+        <select class="form-control" id="sel-x-data">
+          {{#x_cols}}
+          <option {{#selected}}selected{{/selected}} value="{{index}}">第{{index}}列</option>
+          {{/x_cols}}
+        </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="col-sm-3 control-label">X轴时间格式</label>
+    <div class="col-sm-9">
+      <input type="input" class="form-control" id="txt-timeformat" value="YYYY-MM">
+    <p><a href="http://momentjs.com/docs/#/displaying/format/" target="_blank">格式参考</a></p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label">Y轴数据</label>
+    <div class="col-sm-9">
+        <select class="form-control" id="sel-y-data">
+          {{#y_cols}}
+          <option {{#selected}}selected{{/selected}} value="{{index}}">第{{index}}列</option>
+          {{/y_cols}}
+        </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-sm-3 control-label">Y轴名称</label>
+    <div class="col-sm-9">
+      <input type="input" class="form-control" id="txt-y-title" value="数据1">
+    </div>
+  </div>
+
+
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="button" class="btn btn-default" id="btn-gen-chart">生成图表</button>
+    </div>
+  </div>
+</form>
+</script>
+<script src="/static/lib/moment.js" type="text/javascript"></script> 
+<script src="/static/lib/highcharts/js/highcharts.js" type="text/javascript"></script> 
+<script src="/static/lib/papaparse.min.js"></script>
+<script src="/static/csvchart/main.js"></script>

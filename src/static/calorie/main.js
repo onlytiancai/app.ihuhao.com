@@ -22,6 +22,7 @@ $(function(){
             _.bindAll(this, "render");
             _.bindAll(this, "add_food_click");
             _.bindAll(this, "search_food_click");
+            _.bindAll(this, "add_input_food_click");
 
             this.search_food_results = [];
             this.active_tab = 'tab-lastest-food-active';
@@ -35,6 +36,7 @@ $(function(){
         template: $('#tpl-food-select').html(),
         events: {
             "click .add-food-item": "add_food_click",
+            "click .btn-add-input-food": "add_input_food_click",
             "click .btn-search-food": "search_food_click",
         },
         render: function() {
@@ -47,7 +49,7 @@ $(function(){
         add_food_click: function(e) {
             var food = $(e.target).data('id');
             food = this.all_foods.find(function(x){return x.get(0) == food;});
-            app.trigger("food-selected", food);
+            app.trigger("food-selected", {name: food.get(0), calorie: food.get(1)});
         },
         search_food_click: function(e) {
             var keyword = this.$('.txt-food-keyword').val();
@@ -57,6 +59,14 @@ $(function(){
             this.active_tab = 'tab-search-food-active';
             this.render();
         },
+        add_input_food_click: function(e){
+            var name = this.$('#txt_food_name').val();
+            var calorie = this.$('#txt_food_calorie').val();
+            if (!(name && calorie)) {
+                return;
+            }
+            app.trigger("food-selected", {name: name, calorie: parseInt(calorie)});
+        }
     });
 
     var FoodResultView = Backbone.View.extend({
@@ -80,19 +90,34 @@ $(function(){
             $(this.el).html(html);
         },
         on_food_selected: function(food){
-            this.foods.push(food.toJSON());
-            this.total += food.get(1);
+            this.foods.push(food);
+            this.total += food.calorie;
             this.render();
         },
         events: {
-            "click .delete-food-item": "delete_food_item"
+            "click .delete-food-item": "delete_food_item",
+            "click .btn-submit-food-record": "submit_food_record"
         },
         delete_food_item: function(e){
-        
-        }
-    });
+            // 只删除满足条件的第一项
+            var food = $(e.target).data('id');
 
-    var AddFoodRecordView = Backbone.View.extend({
+            var founds = _.filter(this.foods, function(x){ return x.name == food; });
+            food = founds.pop(); // 删除一项
+
+            // reject会删除所有满足条件的项, 所以还要把不该删除的加回去
+            var foods = _.reject(this.foods, function(x) {return x.name == food.name;});
+            _.each(founds, function(x){foods.push(x)});
+            this.foods = foods;
+
+            this.total -= food.calorie;
+            this.render();
+        },
+        submit_food_record: function(e) {
+            alert(this.foods.length + ':' + this.total);
+            var record = new FoodRecord({total: this.total, foods: this.foods});
+            record.save();
+        }
     });
 
     // 显示食物选择部分
