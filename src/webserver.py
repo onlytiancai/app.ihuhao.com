@@ -85,7 +85,8 @@ app.add_processor(web.loadhook(global_hook))
 app.add_processor(web.loadhook(utils.filter_input_loadhook))
 wsgiapp = app.wsgifunc()
 
+utils.init_logger(config.log_path, config.log_level, console=True)
+qqlogin.init(config.qq_app_id, config.qq_app_key, config.qq_callback, on_qq_logined)
+
 if __name__ == '__main__':
-    utils.init_logger(config.log_path, config.log_level, console=True)
-    qqlogin.init(config.qq_app_id, config.qq_app_key, config.qq_callback, on_qq_logined)
     app.run()
