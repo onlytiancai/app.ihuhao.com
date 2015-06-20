@@ -13,16 +13,52 @@ $(function(){
         return _.map(_.range(max), function(x){return ["第", (x + 1),"列"].join('')});
     }
 
-    // 补齐不足的列
-    function format_table(results) {
-        var max = _.max(results.data, function(x){return x.length}).length; 
-        _.map(results.data, function(x){
+    /* 格式化锯齿数组: 补齐列，清空空白列
+     *
+     * 格式化前：
+     * | 1 |  | 1 |
+     * | 2 |  | 2 | 2 |
+     * | 3 |  |
+     * | 4 |  | 4 |
+     *
+     * 格式化后
+     * | 1 | 1 |   |
+     * | 2 | 2 | 2 |
+     * | 3 |   |   |
+     * | 4 | 4 |   |
+     */
+    function format_table(data) {
+        var max = _.max(data, function(x){return x.length}).length; 
+
+        // 补齐列
+        data = _.map(data, function(x){
             var ret = [];
             for (var i = 0; i < max; i++) {
                 ret[i] = x[i] == undefined ? '' : x[i];
             }
             return ret;
         });
+
+        // 删除空白列
+        var empty_col_index = [];
+        for (var i = 0; i < max; i++) {
+            var arr = _.map(data, function(x) { return x[i] });
+            arr = _.filter(arr, function(x){ return x.trim() !== '' });
+            if (_.isEmpty(arr)) {
+                empty_col_index.push(i);
+            }
+        }
+        data = _.map(data, function(x){
+            var ret = [];
+            for (var i = 0; i < max; i++) {
+                if (!_.contains(empty_col_index, i)) {
+                    ret.push(x[i]); 
+                }
+            }
+            return ret;
+        });
+
+        return data;
     }
 
     function get_delimiter() {
@@ -139,12 +175,14 @@ $(function(){
             delimiter: get_delimiter() 
         });
         console.log(results);
-        results.x_cols = get_time_col(results.data[0]);
-        results.y_cols = get_number_col(results.data[0]);
-        results.header = get_header(results.data);
+        var data = format_table(results.data);
+        results.data = data;
+
+        results.x_cols = get_time_col(data[0]);
+        results.y_cols = get_number_col(data[0]);
+        results.header = get_header(data);
         parse_results = results;
 
-        format_table(results);
         
         var tpl = $("#tpl-table-result").html();
         var html = Mustache.render(tpl, results);
