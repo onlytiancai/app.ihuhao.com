@@ -7,6 +7,7 @@ import utils
 import oauth.qqlogin as qqlogin
 import calorie_app
 import csvchart_app
+import yundianping_app
 
 
 urls = ["/", 'IndexHandler',
@@ -18,6 +19,7 @@ urls = ["/", 'IndexHandler',
 
         "/calorie", calorie_app.app,
         "/csvchart", csvchart_app.app,
+        "/yundianping", yundianping_app.app,
         ]
 
 app = web.application(urls, globals())

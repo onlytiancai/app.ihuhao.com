@@ -30,14 +30,8 @@ $(function(){
     function format_table(data) {
         var max = _.max(data, function(x){return x.length}).length; 
 
-        // 补齐列
-        data = _.map(data, function(x){
-            var ret = [];
-            for (var i = 0; i < max; i++) {
-                ret[i] = x[i] == undefined ? '' : x[i];
-            }
-            return ret;
-        });
+        // 用零长度字符串补齐列
+        data = data.map(function(x){return x.length === max ? x : x.concat(new Array(max - x.length)).join('.').split('.')});
 
         // 删除空白列
         var empty_col_index = [];
