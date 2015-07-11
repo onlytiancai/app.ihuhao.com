@@ -39,3 +39,15 @@ body {
     color: #fff;
     background-color:#36A3FF;   
 }
+
+/* Main marketing message and sign up button */
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+.jumbotron h1{
+}
+.jumbotron .btn {
+    padding: 14px 24px;
+    font-size: 21px;
+}
